@@ -1,0 +1,54 @@
+ cmp success,10000
+ jb changeback_white
+ cmp success,40000
+ jb changeback_blue
+ cmp success,90000
+ jb changeback_green
+ jmp changeback_yellow
+changeback_white:
+ mov eax,16
+ mov eax,lightblue+(black*16)
+ call settextcolor
+ jmp call_set1
+changeback_blue:
+ mov eax,16
+ mov eax,lightred+(black*16)
+ call settextcolor
+ jmp call_set1
+changeback_green:
+ mov eax,16
+ mov eax,green+(black*16)
+ call settextcolor
+ jmp call_set1
+changeback_yellow:
+ mov eax,16
+ mov eax,yellow+(black*16)
+ call settextcolor
+
+ cmp success,10000
+ jb changeback_white1
+ cmp success,40000
+ jb changeback_blue1
+ cmp success,90000
+ jb changeback_green1
+ jmp changeback_yellow1
+changeback_white1:
+ mov eax,16
+ mov eax,lightblue+(black*16)
+ call settextcolor
+ jmp call_set2
+changeback_blue1:
+ mov eax,16
+ mov eax,lightred+(black*16)
+ call settextcolor
+ jmp call_set2
+changeback_green1:
+ mov eax,16
+ mov eax,green+(black*16)
+ call settextcolor
+ jmp call_set2
+changeback_yellow1:
+ mov eax,16
+ mov eax,yellow+(black*16)
+ call settextcolor
+

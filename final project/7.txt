@@ -1,0 +1,14 @@
+ INVOKE WriteConsoleOutputAttribute,
+      outputHandle,	; output handle
+	ADDR attributes0,	; write attributes
+	BoxWidth,	; number of cells
+	xyPosition,	; first cell coordinates
+	ADDR cellsWritten
+    ; draw bottom of the box
+    INVOKE WriteConsoleOutputCharacter,
+	outputHandle,	; console output handle
+  	ADDR boxBottom,	; pointer to buffer
+  	BoxWidth,	; size of buffer
+  	xyPosition,	; first cell coordinates
+	ADDR cellsWritten 
+           ; output count
